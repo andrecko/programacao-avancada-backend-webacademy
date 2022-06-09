@@ -76,7 +76,7 @@
 // console.log(nomeMaiusculo.slice(0,5))
 
 // //arrays, vetores, listas
-const lista = ['a','b','c','d','e',]
+// const lista = ['a','b','c','d','e',]
 // console.log(lista.length)
 // console.log(lista[2])
 // console.log(typeof lista)
@@ -132,41 +132,100 @@ const lista = ['a','b','c','d','e',]
 // const jsonErrado = JSON.stringify('{"nome":"Scooby","idade":10},')
 // console.log(jsonErrado)
 
-vetor = [1,2,3,4,5]
+//desafio 1
+// const vetor = [1,2,3,4,5]
 
-notas = {
-    n1: vetor[0],
-    n2: vetor[1],
-    n3: vetor[2],
-    n4: vetor[3],
-    n5: vetor[4]
+// const notas = {
+//     n1: vetor[0],
+//     n2: vetor[1],
+//     n3: vetor[2],
+//     n4: vetor[3],
+//     n5: vetor[4]
+// }
+
+// const { n1, n2, n3, n4, n5 } = notas
+
+// const json1 = JSON.stringify({n1, n2, n3, n4, n5})
+// console.log(json1)
+
+// //desafio 2
+// const x = 5
+// const y = 5
+
+// const calculadora = {
+//     soma: x+y,
+//     subtracao: x-y,
+//     multiplicacao: x*y,
+//     divisao: x/y
+// }
+
+// const jsonCalculadora = JSON.stringify(calculadora)
+
+// console.log(jsonCalculadora)
+
+//estruturas, métodos de listas, funções
+
+const n = 10
+if (n > 10) // > < >= <= == !=
+    console.log('Teste de entrada no if.')
+
+const texto = 0
+if (texto === '0')
+    console.log('Os dados são iguais.')
+else if (true)
+    console.log('Segundo if - if aninhado')
+else
+    console.log('Saída...') //erro na hora de pensar no código
+
+//operador ternário
+const resultado = n > 20 ? true : false
+console.log(resultado)
+console.log(typeof resultado)
+
+let contador = 0
+const lista = [1,7,3,64,2,0]
+while (contador < lista.length) {
+    console.log('O elemento da\n vez é '+ lista[contador] +'.')
+    contador++
 }
 
-const { n1, n2, n3, n4, n5 } = notas
+const outraLista = ['a', 'b', 'd' ,'e' ,'c']
+for (let contador = 0; contador < outraLista.length; contador++)
+    console.log(`O elemento da
+     vez é ${outraLista[contador]}.`) //template literais, ou template string
 
-const jsonNotas = {
-    n1: n1,
-    n2: n2,
-    n3: n3,
-    n4: n4,
-    n5: n5
-}
+const testeLiteral = (`\``==="`")
+console.log(`\\`)
 
-json1 = JSON.stringify(jsonNotas)
-console.log(json1)
+const a=3, b=5
+console.log('Oito é '+(a+b)+' \ne não '+(2*a+b))
+console.log(`Oito é ${(a+b)} 
+e não ${(2*a+b)}`)
 
-const x = 5
-const y = 5
+//métdos de listas-arrays-vetores
+const nomes = ['Abimael','Cleyciane','Paulo','Victor']
+nomes.forEach(function(nome){
+    console.log(nome)
+})
 
-calculadora = {
-    soma: x+y,
-    subtracao: x-y,
-    multiplicacao: x*y,
-    divisao: x/y
-}
+const nomesModificados = nomes.map(function(nome){
+    if(nome === 'Paulo')
+        return nome = 'O Grande'
+    else
+        return nome
+})
+nomesModificados.forEach(function(nome){
+    console.log(nome)
+})
 
-const jsonCalculadora = {
-    calculadora
-}
+const numerosGrandes = ['6','1','9','17','99','94'].filter(function(numero){
+    return (numero>10)
+})
 
-console.log(calculadora)
+numerosGrandes.forEach(function(numero){
+    console.log(numero)
+})
+
+console.log(numerosGrandes.reduce(function(total, numero){
+    return parseInt(total)+parseInt(numero)
+}))
